@@ -1,4 +1,7 @@
 # webhook-payload
+
+[![Build Status](http://travis-ci.org/blatyo/webhook-payload.png)](http://travis-ci.org/blatyo/webhook-payload)
+
 This gem is a convenience wrapper for [Github's webhook payload](https://help.github.com/articles/post-receive-hooks) that is triggered from a post receive hook. Feed it a hash of data and it will parse it into an object that you can use.
 
 ## Setup
