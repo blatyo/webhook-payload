@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Webhook::Payload::VERSION
   s.authors     = ["Allen Madsen"]
   s.email       = ["allen.c.madsen@gmail.com"]
-  s.homepage    = "https://github.com/blatyo/webhook-payload"
+  s.homepage    = "http://blatyo.github.com/webhook-payload"
   s.summary     = "This gem is a convenience wrapper for Github's webhook payload (https://help.github.com/articles/post-receive-hooks) that is triggered from a post receive hook. Feed it a hash of data and it will parse it into an object that you can use."
   s.description = "This gem is a convenience wrapper for Github's webhook payload (https://help.github.com/articles/post-receive-hooks) that is triggered from a post receive hook. Feed it a hash of data and it will parse it into an object that you can use. It also provides conversions from basic data types into more useful types like Time, URI, Pathname, and Boolean."
 
