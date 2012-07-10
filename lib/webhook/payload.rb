@@ -1,6 +1,7 @@
 require 'virtus'
 require 'pathname'
 require 'uri'
+require 'multi_json'
 
 module Virtus
   class Coercion
@@ -19,6 +20,10 @@ end
 module Webhook
   class Payload
     include Virtus
+
+    def self.from_json(json)
+      new(MultiJson.load(json))
+    end
 
     module User
       include Virtus

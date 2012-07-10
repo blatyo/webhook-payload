@@ -67,6 +67,9 @@ You can load that into an object with:
 
 ``` ruby
 payload = Webhook::Payload.new(payload_data)
+
+# Or if you want to load it directly from a json string
+payload = Webhook::Payload.from_json(payload_data_json)
 ```
 
 Then you can access the data via methods rather than through hash keys. It also does conversion of timestamps to `Time`, integer booleans to `true` or `false`, urls to `URI`, and file to `Pathname`.
