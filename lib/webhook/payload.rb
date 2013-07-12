@@ -30,6 +30,7 @@ module Webhook
 
       attribute :email, String
       attribute :name, String
+      attribute :username, String
     end
 
     class URI < Virtus::Attribute::Object
@@ -41,6 +42,10 @@ module Webhook
       include Virtus
 
       class Author
+        include User
+      end
+
+      class Committer
         include User
       end
 
@@ -58,6 +63,7 @@ module Webhook
       attribute :modified, Array[Pathname], :default => []
       attribute :removed, Array[Pathname], :default => []
       attribute :author, Author
+      attribute :committer, Committer
     end
 
     class Repository

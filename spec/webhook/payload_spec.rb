@@ -41,7 +41,8 @@ describe Webhook::Payload do
         subject{repository.owner}
 
         its(:email){should == "chris@ozmm.org"}
-        its(:name){should == "defunkt"}
+        its(:name){should == "Chris Wanstrath"}
+        its(:username){should == "defunkt"}
       end
     end
 
@@ -63,6 +64,17 @@ describe Webhook::Payload do
 
         its(:email){should == "chris@ozmm.org"}
         its(:name){should == "Chris Wanstrath"}
+        its(:username){should == "defunkt"}
+      end
+
+      describe "#committer" do
+        subject{commit.committer}
+
+        its(:email){should == "chris@ozmm.org"}
+        its(:name){should == "Chris Wanstrath"}
+        its(:username){should == "defunkt"}
+      end
+    end
       end
     end
 
@@ -78,7 +90,8 @@ describe Webhook::Payload do
           "private" => 1,
           "owner" => {
             "email" => "chris@ozmm.org",
-            "name" => "defunkt"
+            "name" => "Chris Wanstrath",
+            "username" => "defunkt"
           }
         },
         "commits" => [
@@ -88,7 +101,13 @@ describe Webhook::Payload do
             "url" => "http://github.com/defunkt/github/commit/41a212ee83ca127e3c8cf465891ab7216a705f59",
             "author" => {
               "email" => "chris@ozmm.org",
-              "name" => "Chris Wanstrath"
+              "name" => "Chris Wanstrath",
+              "username" => "defunkt"
+            },
+            "committer" => {
+              "email" => "chris@ozmm.org",
+              "name" => "Chris Wanstrath",
+              "username" => "defunkt"
             },
             "message" => "okay i give in",
             "timestamp" => "2008-02-15T14:57:17-08:00",
@@ -100,7 +119,13 @@ describe Webhook::Payload do
             "url" => "http://github.com/defunkt/github/commit/de8251ff97ee194a289832576287d6f8ad74e3d0",
             "author" => {
               "email" => "chris@ozmm.org",
-              "name" => "Chris Wanstrath"
+              "name" => "Chris Wanstrath",
+              "username" => "defunkt"
+            },
+            "committer" => {
+              "email" => "chris@ozmm.org",
+              "name" => "Chris Wanstrath",
+              "username" => "defunkt"
             },
             "message" => "update pricing a tad",
             "timestamp" => "2008-02-15T14:36:34-08:00"
