@@ -50,6 +50,7 @@ module Webhook
       end
 
       attribute :id, String
+      attribute :distinct, Boolean
       attribute :url, URI
       attribute :message, String
       attribute :timestamp, Time

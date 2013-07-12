@@ -50,6 +50,7 @@ describe Webhook::Payload do
       subject{commit}
 
       its(:id){should == "41a212ee83ca127e3c8cf465891ab7216a705f59"}
+      its(:distinct){should == true}
       its(:url){should == URI.parse("http://github.com/defunkt/github/commit/41a212ee83ca127e3c8cf465891ab7216a705f59")}
       its(:message){should == "okay i give in"}
       its(:timestamp){should == Time.parse("2008-02-15T14:57:17-08:00")}
@@ -83,6 +84,7 @@ describe Webhook::Payload do
         "commits" => [
           {
             "id" => "41a212ee83ca127e3c8cf465891ab7216a705f59",
+            "distinct" => true,
             "url" => "http://github.com/defunkt/github/commit/41a212ee83ca127e3c8cf465891ab7216a705f59",
             "author" => {
               "email" => "chris@ozmm.org",
@@ -94,6 +96,7 @@ describe Webhook::Payload do
           },
           {
             "id" => "de8251ff97ee194a289832576287d6f8ad74e3d0",
+            "distinct" => true,
             "url" => "http://github.com/defunkt/github/commit/de8251ff97ee194a289832576287d6f8ad74e3d0",
             "author" => {
               "email" => "chris@ozmm.org",
