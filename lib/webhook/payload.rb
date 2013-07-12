@@ -33,6 +33,10 @@ module Webhook
       attribute :username, String
     end
 
+    class Pusher
+      include User
+    end
+
     class URI < Virtus::Attribute::Object
       primitive String
       coercion_method :to_uri
@@ -73,15 +77,27 @@ module Webhook
         include User
       end
 
+      attribute :id, Integer
       attribute :url, URI
       attribute :name, String
       attribute :homepage, String
       attribute :pledgie, String
       attribute :description, String
       attribute :watchers, Integer
+      attribute :stargazers, Integer
+      attribute :fork, Boolean
       attribute :forks, Integer
       attribute :private, Boolean
       attribute :owner, Owner
+      attribute :created_at, DateTime
+      attribute :has_downloads, Boolean
+      attribute :has_issues, Boolean
+      attribute :has_wiki, Boolean
+      attribute :language, String
+      attribute :master_branch, String
+      attribute :open_issues, Integer
+      attribute :pushed_at, DateTime
+      attribute :size, Integer
     end
 
     attribute :before, String
@@ -89,5 +105,11 @@ module Webhook
     attribute :ref, String
     attribute :repository, Repository
     attribute :commits, Array[Commit]
+    attribute :compare, URI
+    attribute :created, Boolean
+    attribute :deleted, Boolean
+    attribute :forced, Boolean
+    attribute :head_commit, Commit
+    attribute :pusher, Pusher
   end
 end
