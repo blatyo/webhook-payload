@@ -19,7 +19,7 @@ describe Webhook::Payload do
     its(:before){should == "5aef35982fb2d34e9d9d4502f6ede1072793222d"}
     its(:after){should == "de8251ff97ee194a289832576287d6f8ad74e3d0"}
     its(:ref){should == "refs/heads/master"}
-    its(:compare){should == URI.parse("https://github.com/defunkt/github/compare/5aef35982fb2...de8251ff97ee")}
+    its(:compare){should == "https://github.com/defunkt/github/compare/5aef35982fb2^...de8251ff97ee"}
     its(:created){should == false}
     its(:deleted){should == false}
     its(:forced){should == false}
@@ -192,7 +192,7 @@ describe Webhook::Payload do
         ],
         "after" => "de8251ff97ee194a289832576287d6f8ad74e3d0",
         "ref" => "refs/heads/master",
-        "compare" => "https://github.com/defunkt/github/compare/5aef35982fb2...de8251ff97ee",
+        "compare" => "https://github.com/defunkt/github/compare/5aef35982fb2^...de8251ff97ee",
         "created" => false,
         "deleted" => false,
         "forced" => false,
