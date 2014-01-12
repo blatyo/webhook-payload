@@ -105,7 +105,7 @@ module Webhook
     attribute :ref, String
     attribute :repository, Repository
     attribute :commits, Array[Commit]
-    attribute :compare, URI
+    attribute :compare, String
     attribute :created, Boolean
     attribute :deleted, Boolean
     attribute :forced, Boolean
