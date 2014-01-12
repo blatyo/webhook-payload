@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec"
   s.add_development_dependency "rake"
-  s.add_runtime_dependency "virtus", ">= 0.5.0"
+  s.add_runtime_dependency "virtus", "~> 0.5.0"
   s.add_runtime_dependency "multi_json"
 end
